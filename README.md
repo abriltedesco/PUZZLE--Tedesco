@@ -8,6 +8,7 @@ Quise hacer la inversa del conocido juego donde en vez de que el fantasma sea el
 El fantasma puede **crear y romper bloques de niebla** en la dirección que mira. Esto cumple dos funciones al mismo tiempo:
 - *Bloquear al Pacman para que no alcance al jugador*.
 - *Abrirse camino por zonas cerradas*.
+  
 El problema es que **también bloquea al propio jugador**, por lo que hay que pensar bien dónde colocarla antes de actuar.
 (para esto fue tomada como inspo "Bad Ice Cream" donde crean y rompen bloques de hielo)
 
