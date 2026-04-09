@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bnkmfvqppmgrl"]
+
+[ext_resource type="Script" uid="uid://cmxjepq8dncfl" path="res://scripts/menu.gd" id="1_6cq3m"]
+[ext_resource type="Texture2D" uid="uid://cv51prrl48na3" path="res://assetsPuzzle/d0b7b221cf663c08e6dbd7ecb36c3933 (1).jpg" id="2_5t3kx"]
+[ext_resource type="FontFile" uid="uid://dsv01ips38vts" path="res://assetsPuzzle/font/ppal/templarshieldcond.ttf" id="3_56ah5"]
+[ext_resource type="FontFile" uid="uid://bwo6h5r1di7b6" path="res://assetsPuzzle/font/Pixel Digivolve.otf" id="4_xqndx"]
+
+[node name="menu" type="Control" unique_id=295023971]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6cq3m")
+
+[node name="fondo" type="TextureRect" parent="." unique_id=248395951]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -447.5
+offset_top = -326.0
+offset_right = 471.5
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5t3kx")
+
+[node name="Label" type="Label" parent="." unique_id=619343466]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -196.0
+offset_top = 179.0
+offset_right = 196.0
+offset_bottom = 302.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_56ah5")
+theme_override_font_sizes/font_size = 120
+text = "PHANTOM ESCAPE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=357932128]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -3.0
+offset_right = 220.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="btnJugar" type="Button" parent="HBoxContainer" unique_id=1189574572]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
+theme_override_colors/font_hover_color = Color(0.32156864, 0.3882353, 0.8509804, 1)
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 35
+text = "JUGAR"
+
+[node name="btnReglas" type="Button" parent="HBoxContainer" unique_id=1543464844]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
+theme_override_colors/font_hover_color = Color(0.32156864, 0.3882353, 0.8509804, 1)
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 35
+text = "reglas"
+
+[node name="btnSalir" type="Button" parent="HBoxContainer" unique_id=238266901]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
+theme_override_colors/font_hover_color = Color(0.32156864, 0.3882353, 0.8509804, 1)
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 35
+text = "SALIR
+"
+
+[connection signal="pressed" from="HBoxContainer/btnJugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="pressed" from="HBoxContainer/btnReglas" to="." method="_on_btn_reglas_pressed"]
+[connection signal="pressed" from="HBoxContainer/btnSalir" to="." method="_on_btn_salir_pressed"]

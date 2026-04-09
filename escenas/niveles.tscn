@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://d258c54yyudo1"]
+
+[ext_resource type="Texture2D" uid="uid://0rmtae2myncm" path="res://assetsPuzzle/fondoNiveles.jpg" id="1_l655b"]
+[ext_resource type="FontFile" uid="uid://dsv01ips38vts" path="res://assetsPuzzle/font/ppal/templarshieldcond.ttf" id="2_62ehh"]
+[ext_resource type="PackedScene" uid="uid://bhexxn5qrrlvw" path="res://escenas/btnNiveles/boton_nivel.tscn" id="3_73bos"]
+[ext_resource type="Texture2D" uid="uid://ctwghqd4l22jx" path="res://assetsPuzzle/botonNivel.png" id="4_p7q5s"]
+
+[node name="Control" type="Control" unique_id=2104283244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=832347023]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -447.0
+offset_top = -321.0
+offset_right = 447.0
+offset_bottom = 321.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l655b")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1804882590]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.5
+offset_top = -92.0
+offset_right = 258.5
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1631585929]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_62ehh")
+theme_override_font_sizes/font_size = 120
+text = "NIVELES"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=495312170]
+layout_mode = 2
+theme_override_constants/h_separation = 29
+columns = 5
+
+[node name="botonNivel" parent="VBoxContainer/GridContainer" unique_id=1644839395 instance=ExtResource("3_73bos")]
+layout_mode = 2
+texture_normal = ExtResource("4_p7q5s")
+
+[node name="botonNivel2" parent="VBoxContainer/GridContainer" unique_id=1796350799 instance=ExtResource("3_73bos")]
+layout_mode = 2
+texture_normal = ExtResource("4_p7q5s")
+
+[node name="botonNivel3" parent="VBoxContainer/GridContainer" unique_id=1649295807 instance=ExtResource("3_73bos")]
+layout_mode = 2
+texture_normal = ExtResource("4_p7q5s")
+
+[node name="botonNivel4" parent="VBoxContainer/GridContainer" unique_id=738514763 instance=ExtResource("3_73bos")]
+layout_mode = 2
+texture_normal = ExtResource("4_p7q5s")
+
+[node name="botonNivel5" parent="VBoxContainer/GridContainer" unique_id=498109122 instance=ExtResource("3_73bos")]
+layout_mode = 2
+texture_normal = ExtResource("4_p7q5s")

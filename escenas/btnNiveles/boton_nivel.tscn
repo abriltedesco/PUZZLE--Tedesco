@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bhexxn5qrrlvw"]
+
+[ext_resource type="Texture2D" uid="uid://ctwghqd4l22jx" path="res://assetsPuzzle/botonNivel.png" id="1_v7roo"]
+[ext_resource type="Texture2D" uid="uid://jvot3bschiwx" path="res://assetsPuzzle/btnNivelDis.png" id="2_uv6sn"]
+[ext_resource type="Script" uid="uid://c1e7phhaw0imt" path="res://escenas/btnNiveles/boton_nivel.gd" id="3_nfgg2"]
+[ext_resource type="FontFile" uid="uid://bwo6h5r1di7b6" path="res://assetsPuzzle/font/Pixel Digivolve.otf" id="4_7bxkb"]
+
+[node name="botonNivel" type="TextureButton" unique_id=1644839395]
+texture_normal = ExtResource("1_v7roo")
+texture_disabled = ExtResource("2_uv6sn")
+script = ExtResource("3_nfgg2")
+
+[node name="Label" type="Label" parent="." unique_id=378676085]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 76.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
+theme_override_fonts/font = ExtResource("4_7bxkb")
+theme_override_font_sizes/font_size = 44
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
