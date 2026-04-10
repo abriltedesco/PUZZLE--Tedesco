@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://vcm670dwmiwx"]
+
+[ext_resource type="Texture2D" uid="uid://bdl22vp6u6o1h" path="res://assetsPuzzle/pixil-frame-0.png" id="1_cjkxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utsbl"]
+size = Vector2(31, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mi8qn"]
+
+[node name="fantasmita" type="CharacterBody2D" unique_id=2080408770]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1746431068]
+texture = ExtResource("1_cjkxg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435965600]
+position = Vector2(-5, 8)
+shape = SubResource("RectangleShape2D_utsbl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1250174011]
+position = Vector2(31, 9)
+shape = SubResource("CircleShape2D_mi8qn")
