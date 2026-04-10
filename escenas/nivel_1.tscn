@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://cluusryfhgln1"]
 
+[ext_resource type="Script" uid="uid://3wk54d8uylj3" path="res://scripts/nivel_1.gd" id="1_io84i"]
+
 [node name="nivel1" type="Node2D" unique_id=152215590]
+script = ExtResource("1_io84i")
+
+[node name="Label" type="Label" parent="." unique_id=1706904971]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 575.0
+offset_top = 318.0
+offset_right = 774.0
+offset_bottom = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "nivelsito unoo"

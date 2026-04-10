@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://0rmtae2myncm" path="res://assetsPuzzle/fondoNiveles.jpg" id="1_l655b"]
 [ext_resource type="FontFile" uid="uid://dsv01ips38vts" path="res://assetsPuzzle/font/ppal/templarshieldcond.ttf" id="2_62ehh"]
 [ext_resource type="PackedScene" uid="uid://bhexxn5qrrlvw" path="res://escenas/btnNiveles/boton_nivel.tscn" id="3_73bos"]
-[ext_resource type="Texture2D" uid="uid://ctwghqd4l22jx" path="res://assetsPuzzle/botonNivel.png" id="4_p7q5s"]
 
 [node name="Control" type="Control" unique_id=2104283244]
 layout_mode = 3
@@ -58,20 +57,20 @@ columns = 5
 
 [node name="botonNivel" parent="VBoxContainer/GridContainer" unique_id=1644839395 instance=ExtResource("3_73bos")]
 layout_mode = 2
-texture_normal = ExtResource("4_p7q5s")
+dirNivel = "res://escenas/nivel_1.tscn"
 
 [node name="botonNivel2" parent="VBoxContainer/GridContainer" unique_id=1796350799 instance=ExtResource("3_73bos")]
 layout_mode = 2
-texture_normal = ExtResource("4_p7q5s")
+numNivel = 2
 
 [node name="botonNivel3" parent="VBoxContainer/GridContainer" unique_id=1649295807 instance=ExtResource("3_73bos")]
 layout_mode = 2
-texture_normal = ExtResource("4_p7q5s")
+numNivel = 3
 
 [node name="botonNivel4" parent="VBoxContainer/GridContainer" unique_id=738514763 instance=ExtResource("3_73bos")]
 layout_mode = 2
-texture_normal = ExtResource("4_p7q5s")
+numNivel = 4
 
 [node name="botonNivel5" parent="VBoxContainer/GridContainer" unique_id=498109122 instance=ExtResource("3_73bos")]
 layout_mode = 2
-texture_normal = ExtResource("4_p7q5s")
+numNivel = 5

@@ -1,17 +1,17 @@
 extends TextureButton
 
-var numNivel = 1
-var dirNivel = ""
+@export var numNivel = 1
+@export var dirNivel =""
 
 func _ready() -> void:
-	if numNivel <= global.nivelActual:
+	if numNivel <= Global.nivelActual:
 		disabled = false
 		$Label.visible = true
 		$Label.text = str(numNivel)
 	else:
 		disabled = true
 		$Label.visible = false
-
+		
 func _on_pressed() -> void:
 	if dirNivel != "":
-		get_tree().change_scene(dirNivel)
+		get_tree().change_scene_to_file(dirNivel)
