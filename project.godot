@@ -20,6 +20,8 @@ Global="*uid://cj13nfaajxu3w"
 
 [display]
 
+window/size/viewport_width=928
+window/size/viewport_height=656
 window/main_scene=""
 
 [physics]
@@ -28,4 +30,5 @@ window/main_scene=""
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
