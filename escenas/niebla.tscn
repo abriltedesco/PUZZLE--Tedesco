@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dpca018m14na5"]
 
 [ext_resource type="Script" uid="uid://bibytqs56on10" path="res://scripts/niebla.gd" id="1_bwprm"]
-[ext_resource type="Texture2D" uid="uid://d4nq2r6wisftn" path="res://assetsPuzzle/pixil-frame-0 (3).png" id="2_n5bmh"]
+[ext_resource type="Texture2D" uid="uid://0dnt4kl43ypd" path="res://assetsPuzzle/niebla.png" id="2_n5bmh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5bmh"]
-size = Vector2(59, 54)
+size = Vector2(32, 32)
 
 [node name="niebla" type="StaticBody2D" unique_id=1721526679 groups=["niebla"]]
 script = ExtResource("1_bwprm")
@@ -12,6 +12,5 @@ script = ExtResource("1_bwprm")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1673788080]
 texture = ExtResource("2_n5bmh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=561353396]
-position = Vector2(-0.5, -3)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=148557913]
 shape = SubResource("RectangleShape2D_n5bmh")

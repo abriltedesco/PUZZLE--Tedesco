@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4nq2r6wisftn"
-path="res://.godot/imported/pixil-frame-0 (3).png-a79572e9f606478a003e6dafe1c4ac76.ctex"
+uid="uid://bdl22vp6u6o1h"
+path="res://.godot/imported/fantasma.png-f76d7c97004448ac193ddd9dbc16ed8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetsPuzzle/pixil-frame-0 (3).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (3).png-a79572e9f606478a003e6dafe1c4ac76.ctex"]
+source_file="res://assetsPuzzle/fantasma.png"
+dest_files=["res://.godot/imported/fantasma.png-f76d7c97004448ac193ddd9dbc16ed8c.ctex"]
 
 [params]
 

@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://vcm670dwmiwx"]
 
-[ext_resource type="Texture2D" uid="uid://bdl22vp6u6o1h" path="res://assetsPuzzle/pixil-frame-0.png" id="1_cjkxg"]
+[ext_resource type="Texture2D" uid="uid://bdl22vp6u6o1h" path="res://assetsPuzzle/fantasma.png" id="1_cjkxg"]
 [ext_resource type="Script" uid="uid://dw5o6pugdcyk1" path="res://scripts/fantasmita.gd" id="1_utsbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utsbl"]
-size = Vector2(31, 32)
+size = Vector2(32, 32)
 
 [node name="fantasmita" type="CharacterBody2D" unique_id=2080408770]
 script = ExtResource("1_utsbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1746431068]
+position = Vector2(5, -8)
 texture = ExtResource("1_cjkxg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435965600]
-position = Vector2(-5, 8)
 shape = SubResource("RectangleShape2D_utsbl")

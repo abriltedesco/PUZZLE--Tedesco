@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdl22vp6u6o1h"
-path="res://.godot/imported/pixil-frame-0.png-c9a678d57824db7b7d12dae07c57ddb1.ctex"
+uid="uid://0dnt4kl43ypd"
+path="res://.godot/imported/niebla.png-409e6fa5c737ce7abba90b54774354c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetsPuzzle/pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-c9a678d57824db7b7d12dae07c57ddb1.ctex"]
+source_file="res://assetsPuzzle/niebla.png"
+dest_files=["res://.godot/imported/niebla.png-409e6fa5c737ce7abba90b54774354c1.ctex"]
 
 [params]
 
