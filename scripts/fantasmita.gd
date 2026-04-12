@@ -3,9 +3,11 @@ extends CharacterBody2D
 const SPEED = 150.0
 var direccionActual = Vector2.RIGHT
 @onready var tile = get_parent().get_node("tileMapLayers/frente")
+@onready var tileSalida = get_parent().get_node("tileMapLayers/fondito/salida")
 
 func _physics_process(_delta: float) -> void:
 	moverse()
+	verificarSalida()
 	
 func moverse() -> void:
 	var dir = Vector2.ZERO
@@ -32,9 +34,8 @@ func moverse() -> void:
 		
 
 func manejarNiebla() -> void:
-	var posFrente = global_position + direccionActual * 32 
-	var celda = tile.local_to_map(tile.to_local(posFrente))
-
+	var posFrente = global_position + direccionActual * 32 # donde mira fantasma en pxs
+	var celda = tile.local_to_map(tile.to_local(posFrente)) # "traducido" al cuadradito de la grillita del tile
 	var destruir = false 
 	
 	for nodo in get_parent().get_children():
@@ -50,4 +51,11 @@ func manejarNiebla() -> void:
 			var niebla = preload("res://escenas/niebla.tscn").instantiate()
 			get_parent().add_child(niebla)
 			niebla.global_position = tile.to_global(tile.map_to_local(celda))
-			
+		
+func verificarSalida():
+	var celda_actual = tileSalida.local_to_map(tile.to_local(global_position))
+	var tile_data = tileSalida.get_cell_tile_data(celda_actual) #devuelve objeto
+	
+	if tile_data != null:      
+		if tile_data.get_custom_data("esSalida") == true:
+			print("ganaste")
