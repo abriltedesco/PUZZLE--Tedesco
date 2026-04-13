@@ -4,3 +4,9 @@ extends Node2D
 func _ready() -> void:
 	if numNivel >= Global.nivelActual:
 		Global.nivelActual += 1
+		
+	var cantidad = get_tree().get_nodes_in_group("comidita").size()
+	Global.iniciarComiditas(cantidad)
+	
+	$ganasteCartel/Label.visible = false
+ 

@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://jvot3bschiwx" path="res://assetsPuzzle/btnNivelDis.png" id="3_rgjns"]
 [ext_resource type="PackedScene" uid="uid://vcm670dwmiwx" path="res://escenas/fantasmita.tscn" id="4_43uub"]
 [ext_resource type="PackedScene" uid="uid://dpca018m14na5" path="res://escenas/niebla.tscn" id="5_ylyhu"]
+[ext_resource type="PackedScene" uid="uid://bkmqp1tpgwsqa" path="res://escenas/comidita.tscn" id="6_jlx04"]
+[ext_resource type="FontFile" uid="uid://bwo6h5r1di7b6" path="res://assetsPuzzle/font/Pixel Digivolve.otf" id="7_a1mr3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oh5vl"]
 texture = ExtResource("2_oh5vl")
@@ -637,6 +639,9 @@ texture = ExtResource("2_oh5vl")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rgjns")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61s06"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.69803923)
+
 [node name="nivel1" type="Node2D" unique_id=152215590]
 script = ExtResource("1_io84i")
 
@@ -681,3 +686,36 @@ position = Vector2(485, 320)
 
 [node name="niebla8" parent="." unique_id=2117384408 instance=ExtResource("5_ylyhu")]
 position = Vector2(531, 266)
+
+[node name="comidita" parent="." unique_id=993742195 instance=ExtResource("6_jlx04")]
+position = Vector2(331, 54)
+
+[node name="comidita3" parent="." unique_id=1645792523 instance=ExtResource("6_jlx04")]
+position = Vector2(38, 618)
+
+[node name="comidita2" parent="." unique_id=1101877595 instance=ExtResource("6_jlx04")]
+position = Vector2(456, 584)
+
+[node name="comidita4" parent="." unique_id=1912306544 instance=ExtResource("6_jlx04")]
+position = Vector2(889, 583)
+
+[node name="ganasteCartel" type="CanvasLayer" parent="." unique_id=574003678]
+
+[node name="Label" type="Label" parent="ganasteCartel" unique_id=1761347074]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -465.0
+offset_top = -331.0
+offset_right = 466.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_a1mr3")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_61s06")
+text = "felicidades, ganaste!"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkmqp1tpgwsqa"]
+
+[ext_resource type="Script" uid="uid://bty7jpg3ndsbk" path="res://scripts/comidita.gd" id="1_85yxa"]
+[ext_resource type="Texture2D" uid="uid://pib7voqh3gbh" path="res://assetsPuzzle/comidita.png" id="1_fwjj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85yxa"]
+size = Vector2(16, 16)
+
+[node name="comidita" type="Area2D" unique_id=993742195 groups=["comidita"]]
+script = ExtResource("1_85yxa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=426287006]
+texture = ExtResource("1_fwjj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2072536340]
+shape = SubResource("RectangleShape2D_85yxa")

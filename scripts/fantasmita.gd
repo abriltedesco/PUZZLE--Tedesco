@@ -4,6 +4,7 @@ const SPEED = 150.0
 var direccionActual = Vector2.RIGHT
 @onready var tile = get_parent().get_node("tileMapLayers/frente")
 @onready var tileSalida = get_parent().get_node("tileMapLayers/fondito/salida")
+@onready var cartel = get_parent().get_node("ganasteCartel/Label")
 
 func _physics_process(_delta: float) -> void:
 	moverse()
@@ -57,5 +58,12 @@ func verificarSalida():
 	var tile_data = tileSalida.get_cell_tile_data(celda_actual) #devuelve objeto
 	
 	if tile_data != null:      
-		if tile_data.get_custom_data("esSalida") == true:
-			print("ganaste")
+		if tile_data.get_custom_data("esSalida") == true && Global.salidaAbierta:
+			ganaste() 
+			
+func ganaste() -> void:
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	cartel.visible = true
+	await get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://escenas/niveles.tscn")

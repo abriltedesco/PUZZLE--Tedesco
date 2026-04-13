@@ -7,6 +7,8 @@ var nivelActual = 1 :
 		guardarJuego()
 		
 var dataJuego = {	'nivelActual': 1 	}
+var comiditasRestantes =0
+var salidaAbierta=false
 
 func _ready() -> void:
 	cargarJuego()
@@ -28,3 +30,17 @@ func cargarJuego():
 		if resultado and resultado.has('nivelActual'):
 			nivelActual = resultado['nivelActual']
 		archivo.close()
+		
+func iniciarComiditas(cantidad: int) -> void:
+	comiditasRestantes = cantidad
+	
+func abrirSalida():
+	salidaAbierta = true
+	
+func recolectar() -> void:
+	comiditasRestantes -= 1
+	print("comiditas restantes: ", comiditasRestantes)
+	if comiditasRestantes <= 0:
+		print("todas recolectadas")
+		abrirSalida()
+		

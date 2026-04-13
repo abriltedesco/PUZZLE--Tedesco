@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utsbl"]
 size = Vector2(32, 32)
 
-[node name="fantasmita" type="CharacterBody2D" unique_id=2080408770]
+[node name="fantasmita" type="CharacterBody2D" unique_id=2080408770 groups=["fantasma"]]
 script = ExtResource("1_utsbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1746431068]
