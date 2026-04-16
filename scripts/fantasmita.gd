@@ -5,6 +5,8 @@ var direccionActual = Vector2.RIGHT
 @onready var tile = get_parent().get_node("tileMapLayers/frente")
 @onready var tileSalida = get_parent().get_node("tileMapLayers/fondito/salida")
 @onready var cartel = get_parent().get_node("ganasteCartel/Label")
+@onready var cartelGO = get_parent().get_node("perdisteCartel/Label")
+@onready var cartelGO2 = get_parent().get_node("perdisteCartel/Label2")
 
 func _physics_process(_delta: float) -> void:
 	moverse()
@@ -29,6 +31,9 @@ func moverse() -> void:
 	velocity = dir * SPEED
 	move_and_slide()
 	
+	for i in get_slide_collision_count():
+		if get_slide_collision(i).get_collider().is_in_group("pacman"):
+			perdiste()
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		manejarNiebla()
@@ -67,3 +72,11 @@ func ganaste() -> void:
 	cartel.visible = true
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://escenas/niveles.tscn")
+	
+func perdiste() -> void:
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	cartelGO.visible = true
+	cartelGO2.visible = true
+	await get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://escenas/nivel_2.tscn") # para q pueda reintentar 
