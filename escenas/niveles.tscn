@@ -67,11 +67,14 @@ dirNivel = "res://escenas/nivel_2.tscn"
 [node name="botonNivel3" parent="VBoxContainer/GridContainer" unique_id=1649295807 instance=ExtResource("3_73bos")]
 layout_mode = 2
 numNivel = 3
+dirNivel = "res://escenas/nivel_3.tscn"
 
 [node name="botonNivel4" parent="VBoxContainer/GridContainer" unique_id=738514763 instance=ExtResource("3_73bos")]
 layout_mode = 2
 numNivel = 4
+dirNivel = "res://escenas/nivel_4.tscn"
 
 [node name="botonNivel5" parent="VBoxContainer/GridContainer" unique_id=498109122 instance=ExtResource("3_73bos")]
 layout_mode = 2
 numNivel = 5
+dirNivel = "res://escenas/nivel_5.tscn"

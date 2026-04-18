@@ -1,5 +1,5 @@
 extends Node2D
-@export var numNivel = 2
+@export var numNivel = 3
 
 func _ready() -> void:
 	if numNivel >= Global.nivelActual:
