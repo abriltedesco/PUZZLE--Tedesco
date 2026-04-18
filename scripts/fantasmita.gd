@@ -15,16 +15,16 @@ func _physics_process(_delta: float) -> void:
 func moverse() -> void:
 	var dir = Vector2.ZERO
 	
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("moverD"):
 		dir = Vector2.RIGHT
 		direccionActual = dir
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("moverI"):
 		dir = Vector2.LEFT
 		direccionActual = dir
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("moverAb"):
 		dir = Vector2.DOWN
 		direccionActual = dir
-	elif Input.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("moverArr"):
 		dir = Vector2.UP
 		direccionActual = dir
 		
