@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cd6l23h1d7l5u"]
+
+[ext_resource type="Texture2D" uid="uid://cg4om4ssa8jni" path="res://assetsPuzzle/botonActivador.png" id="1_bswl3"]
+[ext_resource type="Script" uid="uid://tyxm3og36dvj" path="res://scripts/btn_activador.gd" id="1_u788u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u788u"]
+size = Vector2(16, 16)
+
+[node name="btnActivador" type="Area2D" unique_id=1086735818]
+script = ExtResource("1_u788u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=422993906]
+texture = ExtResource("1_bswl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=232227530]
+shape = SubResource("RectangleShape2D_u788u")

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var esVertical = false # para poder aclarar cuando debe moverse verticalmente y cuando horizontalmente
-const SPEED = 300.0
+@export var velocidad = 300.0 # cambie esto ya q chocaban los pacmans en el niv4 
 var direccion = Vector2.RIGHT
 
 func _ready() -> void:
@@ -9,8 +9,14 @@ func _ready() -> void:
 		direccion = Vector2.UP
 		
 func _physics_process(delta: float) -> void:
-	velocity = direccion * SPEED
+	velocity = direccion * velocidad
 	move_and_slide()
+	
+	for i in get_slide_collision_count():	
+		if get_slide_collision(i).get_collider().name == "fantasmita":
+			if get_slide_collision(i).get_collider().cartelGO.visible == false:
+				get_slide_collision(i).get_collider().perdiste()
+				
 	if is_on_wall() or is_on_ceiling() or is_on_floor():
 		direccion = direccion * -1
 		
@@ -25,3 +31,5 @@ func _physics_process(delta: float) -> void:
 			$Sprite2D.flip_h = true
 		else:
 			$Sprite2D.flip_h = false
+			
+			

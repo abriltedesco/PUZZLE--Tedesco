@@ -9,6 +9,8 @@ var nivelActual = 1 :
 var dataJuego = {	'nivelActual': 1 	}
 var comiditasRestantes =0
 var salidaAbierta=false
+var botonPisado= false 
+var necesitaBtn=false
 
 func _ready() -> void:
 	cargarJuego()
@@ -31,8 +33,11 @@ func cargarJuego():
 			nivelActual = resultado['nivelActual']
 		archivo.close()
 		
-func iniciarComiditas(cantidad: int) -> void:
+func iniciarComiditas(cantidad: int, necesita:bool = false) -> void: # si no le mandas nada, asume q es false
 	comiditasRestantes = cantidad
+	salidaAbierta = false
+	botonPisado = false
+	necesitaBtn=necesita
 	
 func abrirSalida():
 	salidaAbierta = true
@@ -42,5 +47,16 @@ func recolectar() -> void:
 	print("comiditas restantes: ", comiditasRestantes)
 	if comiditasRestantes <= 0:
 		print("todas recolectadas")
-		abrirSalida()
+		chequearVictoria() 
 		
+		
+func pisarBoton() -> void:
+	botonPisado = true
+	print("Botón activado.")
+	chequearVictoria()
+	
+func chequearVictoria() -> void:
+	if comiditasRestantes == 0 :
+		if !necesitaBtn or botonPisado:
+			salidaAbierta = true
+			print("salida abierta")
