@@ -9,8 +9,11 @@ var direccionActual = Vector2.RIGHT
 @onready var cartelGO2 = get_parent().get_node("perdisteCartel/Label2")
 
 func _physics_process(_delta: float) -> void:
+	tileSalida.modulate = Color(0.3, 0.3, 0.3)
 	moverse()
 	verificarSalida()
+	if Global.salidaAbierta == true:
+		tileSalida.modulate = Color(1.0, 1.0, 1.0) #vuelve al color normal q ttiene en el tile
 	
 func moverse() -> void:
 	var dir = Vector2.ZERO
