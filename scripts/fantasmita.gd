@@ -43,17 +43,24 @@ func manejarNiebla() -> void:
 	var posFrente = global_position + direccionActual * 32 # donde mira fantasma en pxs
 	var celda = tile.local_to_map(tile.to_local(posFrente)) # "traducido" al cuadradito de la grillita del tile
 	var destruir = false 
-	
+		
 	for nodo in get_parent().get_children():
 		if nodo.is_in_group("niebla"):
-			if posFrente.distance_to(nodo.global_position) < 10:
-				nodo.queue_free() 
+			var colorDeEstaNiebla = nodo.colorNiebla
+			var puedoRomperla = false
+			
+			if colorDeEstaNiebla == "-":
+				puedoRomperla = true 
+			elif Global.habilitadoParaRomper.get(colorDeEstaNiebla) == true:
+					puedoRomperla = true
+					
+			if puedoRomperla and posFrente.distance_to(nodo.global_position) < 10:
+				nodo.queue_free()
 				destruir = true
-				
+		
 	if destruir:
 		print("niebla destruida")
-	else:
-		if tile.get_cell_source_id(celda) == -1: # si está vacio
+	elif tile.get_cell_source_id(celda) == -1: # si está vacio
 			var niebla = preload("res://escenas/niebla.tscn").instantiate()
 			get_parent().add_child(niebla)
 			niebla.global_position = tile.to_global(tile.map_to_local(celda))

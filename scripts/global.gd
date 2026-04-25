@@ -8,9 +8,11 @@ var nivelActual = 1 :
 		
 var dataJuego = {	'nivelActual': 1 	}
 var comiditasRestantes =0
+var comiditasPorColor= {}
 var salidaAbierta=false
 var botonPisado= false 
 var necesitaBtn=false
+var habilitadoParaRomper = {}
 
 func _ready() -> void:
 	cargarJuego()
@@ -37,18 +39,39 @@ func iniciarComiditas(cantidad: int, necesita:bool = false) -> void: # si no le 
 	comiditasRestantes = cantidad
 	salidaAbierta = false
 	botonPisado = false
-	necesitaBtn=necesita
+	necesitaBtn = necesita
+	comiditasPorColor.clear()
+	habilitadoParaRomper.clear()
+	
+	for comida in get_tree().get_nodes_in_group("comidita"):
+		if comida.colorComida != "-":
+			habilitadoParaRomper[comida.colorComida] = false
+			if comiditasPorColor.has(comida.colorComida):
+				comiditasPorColor[comida.colorComida] += 1
+			else:
+				comiditasPorColor[comida.colorComida] = 1
+			
+	print("colores en este nivel: ", comiditasPorColor)
 	
 func abrirSalida():
 	salidaAbierta = true
 	
-func recolectar() -> void:
+func recolectar(color) -> void:
 	comiditasRestantes -= 1
-	print("comiditas restantes: ", comiditasRestantes)
+	
+	if color != "-" and comiditasPorColor.has(color):
+		comiditasPorColor[color] -= 1
+		if comiditasPorColor[color] <= 0:
+			habilitadoParaRomper[color] = true 
+			colorCompletado(color)
+		
 	if comiditasRestantes <= 0:
-		print("todas recolectadas")
 		chequearVictoria() 
 		
+func colorCompletado(color: String) -> void:
+	for niebla in get_tree().get_nodes_in_group("niebla" + color):
+		niebla.queue_free()
+		print("nieblas " + color + " destruidas!")
 		
 func pisarBoton() -> void:
 	botonPisado = true
