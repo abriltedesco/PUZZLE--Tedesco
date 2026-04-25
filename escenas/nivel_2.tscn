@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://vcm670dwmiwx" path="res://escenas/fantasmita.tscn" id="5_dh5qm"]
 [ext_resource type="PackedScene" uid="uid://b80uaif1yku6w" path="res://escenas/pacman.tscn" id="6_e34w8"]
 [ext_resource type="FontFile" uid="uid://bwo6h5r1di7b6" path="res://assetsPuzzle/font/Pixel Digivolve.otf" id="8_cagvo"]
+[ext_resource type="PackedScene" uid="uid://d360scu40ixa3" path="res://escenas/reloj.tscn" id="9_4awoi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cagvo"]
 texture = ExtResource("1_rcqas")
@@ -645,7 +646,6 @@ bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.69803923)
 
 [node name="nivel_2" type="Node2D" unique_id=1320287689]
 script = ExtResource("1_dh5qm")
-numNivel = 2
 
 [node name="tileMapLayers" type="Node2D" parent="." unique_id=1433231320]
 
@@ -766,3 +766,6 @@ text = "
 se reiniciará el juego"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="reloj" parent="." unique_id=659180923 instance=ExtResource("9_4awoi")]
+tiempoNivel = 30

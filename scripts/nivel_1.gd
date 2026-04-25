@@ -9,4 +9,6 @@ func _ready() -> void:
 	Global.iniciarComiditas(cantidad)
 	
 	$ganasteCartel/Label.visible = false
+	$perdisteCartel/Label.visible = false
+	$perdisteCartel/Label2.visible = false
  

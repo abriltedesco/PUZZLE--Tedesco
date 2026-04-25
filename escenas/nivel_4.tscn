@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bkmqp1tpgwsqa" path="res://escenas/comidita.tscn" id="7_lc4cf"]
 [ext_resource type="PackedScene" uid="uid://dpca018m14na5" path="res://escenas/niebla.tscn" id="8_7wr0m"]
 [ext_resource type="PackedScene" uid="uid://cd6l23h1d7l5u" path="res://escenas/btn_activador.tscn" id="9_ee2xf"]
+[ext_resource type="PackedScene" uid="uid://d360scu40ixa3" path="res://escenas/reloj.tscn" id="10_kf1on"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yk71k"]
 texture = ExtResource("2_kf1on")
@@ -812,3 +813,5 @@ esVertical = true
 
 [node name="fantasmita" parent="." unique_id=2080408770 instance=ExtResource("6_cxb7l")]
 position = Vector2(57, 371)
+
+[node name="reloj" parent="." unique_id=659180923 instance=ExtResource("10_kf1on")]

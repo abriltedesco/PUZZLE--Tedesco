@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkmqp1tpgwsqa" path="res://escenas/comidita.tscn" id="4_1col5"]
 [ext_resource type="PackedScene" uid="uid://b80uaif1yku6w" path="res://escenas/pacman.tscn" id="5_ol0td"]
 [ext_resource type="PackedScene" uid="uid://vcm670dwmiwx" path="res://escenas/fantasmita.tscn" id="7_7ient"]
+[ext_resource type="PackedScene" uid="uid://d360scu40ixa3" path="res://escenas/reloj.tscn" id="8_kj36w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ient"]
 texture = ExtResource("1_foow7")
@@ -693,7 +694,6 @@ tile_set = SubResource("TileSet_30wi5")
 rendering_quadrant_size = 20
 
 [node name="ganasteCartel" type="CanvasLayer" parent="." unique_id=1782595600]
-visible = false
 
 [node name="Label" type="Label" parent="ganasteCartel" unique_id=753422624]
 anchors_preset = 8
@@ -715,7 +715,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="perdisteCartel" type="CanvasLayer" parent="." unique_id=1500262660]
-visible = false
 
 [node name="Label" type="Label" parent="perdisteCartel" unique_id=1982263245]
 anchors_preset = 8
@@ -801,3 +800,6 @@ position = Vector2(74, 326)
 position = Vector2(321, 421)
 floor_snap_length = 0.0
 velocidad = 200.0
+
+[node name="reloj" parent="." unique_id=659180923 instance=ExtResource("8_kj36w")]
+tiempoNivel = 30

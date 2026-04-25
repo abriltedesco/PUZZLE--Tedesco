@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d360scu40ixa3"]
+
+[ext_resource type="Script" uid="uid://bo3biyxkxu0hi" path="res://scripts/reloj.gd" id="1_ojdfd"]
+
+[node name="reloj" type="CanvasLayer" unique_id=659180923]
+script = ExtResource("1_ojdfd")
+
+[node name="Label" type="Label" parent="." unique_id=591114237]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = 15.0
+offset_right = 38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+text = "Tiempo: 0"
+
+[node name="Timer" type="Timer" parent="." unique_id=1563042475]
+autostart = true
