@@ -80,6 +80,9 @@ func ganaste() -> void:
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	cartel.visible = true
+	var nivelEscena = get_parent().numNivel
+	if nivelEscena >= Global.nivelActual:
+		Global.nivelActual += 1
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://escenas/niveles.tscn")
 	

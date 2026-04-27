@@ -4,9 +4,6 @@ var porColor = {}
 var cantidad = 0
 
 func _ready() -> void:
-	if numNivel >= Global.nivelActual:
-		Global.nivelActual += 1
-
 	for comidita in get_tree().get_nodes_in_group("comidita"):
 		var color = comidita.colorComida
 		if not porColor.has(color):

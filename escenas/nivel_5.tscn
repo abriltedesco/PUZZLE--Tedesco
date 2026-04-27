@@ -665,6 +665,7 @@ tile_set = SubResource("TileSet_6ur47")
 rendering_quadrant_size = 20
 
 [node name="ganasteCartel" type="CanvasLayer" parent="." unique_id=909057053]
+visible = false
 
 [node name="Label" type="Label" parent="ganasteCartel" unique_id=1593212578]
 anchors_preset = 8
@@ -686,6 +687,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="perdisteCartel" type="CanvasLayer" parent="." unique_id=88588722]
+visible = false
 
 [node name="Label" type="Label" parent="perdisteCartel" unique_id=1931950423]
 anchors_preset = 8
@@ -783,7 +785,7 @@ position = Vector2(422, 140)
 colorNiebla = "violeta"
 
 [node name="pacman" parent="." unique_id=1907907721 groups=["pacman"] instance=ExtResource("8_6ntnm")]
-position = Vector2(854, 49)
+position = Vector2(881, 223)
 floor_snap_length = 0.0
 velocidad = 200.0
 persigue = true
@@ -821,7 +823,7 @@ position = Vector2(46, 429)
 colorComida = "celeste"
 
 [node name="pacman2" parent="." unique_id=1622662047 groups=["pacman"] instance=ExtResource("8_6ntnm")]
-position = Vector2(57, 551)
+position = Vector2(39, 418)
 floor_snap_length = 0.0
 velocidad = 200.0
 persigue = true
