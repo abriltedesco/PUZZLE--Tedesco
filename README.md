@@ -13,6 +13,6 @@ El problema es que **también bloquea al propio jugador**, por lo que hay que pe
 (para esto fue tomada como inspo "Bad Ice Cream" donde crean y rompen bloques de hielo)
 
 ## Llave - puerta
-Aparecerá una puerta que bloquea el acceso a la salida. 
-Para abrirla se debe haber "comido" todas las bolitas y a medida que los niveles sean más complejos, habrán palancas que ayudarán a abrirla también.
+El acceso a la salida está bloqueado. Para abrirla se debe haber "comido" todas las comiditas.
 Esto obliga al jugador a estar atento a: mgestionar la niebla y evitar al enemigo + tener que pensar bien cuando y como usar/llegar a las palancas + asegurarse de haber comido todo
+

@@ -5,12 +5,11 @@ var tiempoActual = 0
 
 func _ready() -> void:
 	tiempoActual = tiempoNivel
-	$Label.text = "Tiempo restante: " + str(tiempoActual)
 	$Timer.timeout.connect(timeout)
 
 func timeout() -> void:
 	tiempoActual -= 1
-	$Label.text = "Tiempo: " + str(tiempoActual)
+	$Label.text = "Tiempo restante: " + str(tiempoActual)
 	
 	if tiempoActual <= 0:
 		$Timer.stop()
