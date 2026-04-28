@@ -7,9 +7,12 @@ var direccionActual = Vector2.RIGHT
 @onready var cartel = get_parent().get_node("ganasteCartel/Label")
 @onready var cartelGO = get_parent().get_node("perdisteCartel/Label")
 @onready var cartelGO2 = get_parent().get_node("perdisteCartel/Label2")
+@onready var reloj = get_parent().get_node("reloj")
 
 var imgUp = preload("res://assetsPuzzle/fantasma/up.png")
 var imgDown = preload("res://assetsPuzzle/fantasma/down.png")
+var imgLeft = preload("res://assetsPuzzle/fantasma/left.png")
+var imgDer  = preload("res://assetsPuzzle/fantasma/fantasma.png")
 
 func _physics_process(_delta: float) -> void:
 	tileSalida.modulate = Color(0.486, 0.486, 0.486, 1.0)
@@ -22,18 +25,21 @@ func moverse() -> void:
 	var dir = Vector2.ZERO
 	
 	if Input.is_action_pressed("moverD"):
+		$Sprite2D.texture = imgDer
 		dir = Vector2.RIGHT
 		direccionActual = dir
 	elif Input.is_action_pressed("moverI"):
-		$Sprite2D.flip_h = true
+		$Sprite2D.texture = imgLeft
 		dir = Vector2.LEFT
 		direccionActual = dir
 	elif Input.is_action_pressed("moverAb"):
 		$Sprite2D.texture = imgDown
+		$Sprite2D.flip_h = false
 		dir = Vector2.DOWN
 		direccionActual = dir
 	elif Input.is_action_pressed("moverArr"):
 		$Sprite2D.texture = imgUp
+		$Sprite2D.flip_h = false
 		dir = Vector2.UP
 		direccionActual = dir
 		
@@ -89,6 +95,7 @@ func ganaste() -> void:
 	var nivelEscena = get_parent().numNivel
 	if nivelEscena >= Global.nivelActual:
 		Global.nivelActual += 1
+	get_tree().paused = true
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://escenas/niveles.tscn")
 	

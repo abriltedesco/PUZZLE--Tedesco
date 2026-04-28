@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dw5o6pugdcyk1" path="res://scripts/fantasmita.gd" id="1_utsbl"]
 [ext_resource type="Texture2D" uid="uid://8qjnwwgf3y08" path="res://assetsPuzzle/fantasma/fantasma.png" id="2_utsbl"]
+[ext_resource type="AudioStream" uid="uid://bkuhb31q8i10j" path="res://assetsPuzzle/sfx/lose.wav" id="3_mi8qn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utsbl"]
 size = Vector2(32, 32)
@@ -15,3 +16,6 @@ texture = ExtResource("2_utsbl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435965600]
 shape = SubResource("RectangleShape2D_utsbl")
+
+[node name="sonidoPerdiste" type="AudioStreamPlayer2D" parent="." unique_id=189024647]
+stream = ExtResource("3_mi8qn")
