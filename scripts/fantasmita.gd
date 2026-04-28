@@ -8,6 +8,9 @@ var direccionActual = Vector2.RIGHT
 @onready var cartelGO = get_parent().get_node("perdisteCartel/Label")
 @onready var cartelGO2 = get_parent().get_node("perdisteCartel/Label2")
 
+var imgUp = preload("res://assetsPuzzle/fantasma/up.png")
+var imgDown = preload("res://assetsPuzzle/fantasma/down.png")
+
 func _physics_process(_delta: float) -> void:
 	tileSalida.modulate = Color(0.486, 0.486, 0.486, 1.0)
 	moverse()
@@ -22,12 +25,15 @@ func moverse() -> void:
 		dir = Vector2.RIGHT
 		direccionActual = dir
 	elif Input.is_action_pressed("moverI"):
+		$Sprite2D.flip_h = true
 		dir = Vector2.LEFT
 		direccionActual = dir
 	elif Input.is_action_pressed("moverAb"):
+		$Sprite2D.texture = imgDown
 		dir = Vector2.DOWN
 		direccionActual = dir
 	elif Input.is_action_pressed("moverArr"):
+		$Sprite2D.texture = imgUp
 		dir = Vector2.UP
 		direccionActual = dir
 		

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdl22vp6u6o1h"
-path="res://.godot/imported/fantasma.png-f76d7c97004448ac193ddd9dbc16ed8c.ctex"
+uid="uid://caitrv45kahcr"
+path="res://.godot/imported/up.png-b72f6e2239a48b99498caffcf04c6b24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetsPuzzle/fantasma.png"
-dest_files=["res://.godot/imported/fantasma.png-f76d7c97004448ac193ddd9dbc16ed8c.ctex"]
+source_file="res://assetsPuzzle/fantasma/up.png"
+dest_files=["res://.godot/imported/up.png-b72f6e2239a48b99498caffcf04c6b24.ctex"]
 
 [params]
 
