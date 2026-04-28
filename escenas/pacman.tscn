@@ -11,6 +11,7 @@ radius = 144.0
 height = 292.0
 
 [node name="pacman" type="CharacterBody2D" unique_id=1907907721]
+safe_margin = 0.09
 script = ExtResource("1_ludnt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1081146493]
@@ -27,5 +28,12 @@ shape = SubResource("CircleShape2D_ludnt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaVision" unique_id=18029211]
 shape = SubResource("CapsuleShape2D_ludnt")
 
+[node name="navAgent" type="NavigationAgent2D" parent="." unique_id=644583782]
+
+[node name="Timer" type="Timer" parent="navAgent" unique_id=999209118]
+wait_time = 0.5
+autostart = true
+
 [connection signal="body_entered" from="AreaVision" to="." method="_on_area_vision_body_entered"]
 [connection signal="body_exited" from="AreaVision" to="." method="_on_area_vision_body_exited"]
+[connection signal="timeout" from="navAgent/Timer" to="." method="_on_timer_timeout"]

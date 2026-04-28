@@ -87,9 +87,11 @@ func ganaste() -> void:
 	get_tree().change_scene_to_file("res://escenas/niveles.tscn")
 	
 func perdiste() -> void:
+	var tree = get_tree()
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	cartelGO.visible = true
 	cartelGO2.visible = true
 	await get_tree().create_timer(3.0).timeout
-	get_tree().reload_current_scene()
+	if tree:
+		tree.reload_current_scene()
