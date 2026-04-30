@@ -12,4 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_btn_volver_pressed() -> void:
+	$btnVolver/sonidoSelect.play()
+	await $btnVolver/sonidoSelect.finished
 	get_tree().change_scene_to_file("res://escenas/menu.tscn")

@@ -17,3 +17,7 @@ func _on_pressed() -> void:
 	if dirNivel != "":
 		await$"../sonidoSelect".finished
 		get_tree().change_scene_to_file(dirNivel)
+
+
+func _on_btn_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://escenas/menu.tscn")

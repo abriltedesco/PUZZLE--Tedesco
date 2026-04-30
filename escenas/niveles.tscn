@@ -4,6 +4,11 @@
 [ext_resource type="FontFile" uid="uid://dsv01ips38vts" path="res://assetsPuzzle/font/ppal/templarshieldcond.ttf" id="2_62ehh"]
 [ext_resource type="PackedScene" uid="uid://bhexxn5qrrlvw" path="res://escenas/btnNiveles/boton_nivel.tscn" id="3_73bos"]
 [ext_resource type="AudioStream" uid="uid://dypimfie047jx" path="res://assetsPuzzle/sfx/select_4.wav" id="4_l655b"]
+[ext_resource type="FontFile" uid="uid://bwo6h5r1di7b6" path="res://assetsPuzzle/font/Pixel Digivolve.otf" id="5_62ehh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73bos"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7q5s"]
 
 [node name="Control" type="Control" unique_id=2104283244]
 layout_mode = 3
@@ -82,3 +87,25 @@ dirNivel = "res://escenas/nivel_4.tscn"
 layout_mode = 2
 numNivel = 5
 dirNivel = "res://escenas/nivel_5.tscn"
+
+[node name="btnMenu" type="Button" parent="." unique_id=461879189]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 546.0
+offset_right = 551.0
+offset_bottom = 588.0
+theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
+theme_override_colors/font_hover_color = Color(0.32156864, 0.3882353, 0.8509804, 1)
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 1
+theme_override_fonts/font = ExtResource("5_62ehh")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_73bos")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7q5s")
+text = "menú"
+icon_alignment = 2
+
+[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="btnMenu" unique_id=1711328827]
+stream = ExtResource("4_l655b")
+
+[connection signal="pressed" from="btnMenu" to="VBoxContainer/GridContainer/botonNivel" method="_on_btn_menu_pressed"]

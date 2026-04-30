@@ -815,3 +815,4 @@ esVertical = true
 position = Vector2(57, 371)
 
 [node name="reloj" parent="." unique_id=659180923 instance=ExtResource("10_kf1on")]
+tiempoNivel = 45
