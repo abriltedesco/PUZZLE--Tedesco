@@ -12,5 +12,8 @@ func _ready() -> void:
 	
 func _recolectada(cuerpo) -> void:
 	if cuerpo.is_in_group("fantasma"):
+		$sonidoComer.play()
 		Global.recolectar(colorComida)   
+		$Sprite2D.visible = false
+		await $sonidoComer.finished
 		queue_free()         

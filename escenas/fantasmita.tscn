@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dw5o6pugdcyk1" path="res://scripts/fantasmita.gd" id="1_utsbl"]
 [ext_resource type="Texture2D" uid="uid://8qjnwwgf3y08" path="res://assetsPuzzle/fantasma/fantasma.png" id="2_utsbl"]
-[ext_resource type="AudioStream" uid="uid://bkuhb31q8i10j" path="res://assetsPuzzle/sfx/lose.wav" id="3_mi8qn"]
+[ext_resource type="AudioStream" uid="uid://boro0ga2kw5bp" path="res://assetsPuzzle/Arcade - Pac-Man - Miscellaneous - Sound Effects/death_0.wav" id="3_4gjv1"]
+[ext_resource type="AudioStream" uid="uid://cs1mh56ij8oya" path="res://assetsPuzzle/sfx/wobble.wav" id="4_3fmfe"]
+[ext_resource type="AudioStream" uid="uid://yuhayhyn5m8q" path="res://assetsPuzzle/sfx/8_bit_level_complete.wav" id="5_4gjv1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utsbl"]
 size = Vector2(32, 32)
@@ -18,4 +20,11 @@ texture = ExtResource("2_utsbl")
 shape = SubResource("RectangleShape2D_utsbl")
 
 [node name="sonidoPerdiste" type="AudioStreamPlayer2D" parent="." unique_id=189024647]
-stream = ExtResource("3_mi8qn")
+stream = ExtResource("3_4gjv1")
+
+[node name="sonidoRomper" type="AudioStreamPlayer2D" parent="." unique_id=88361400]
+stream = ExtResource("4_3fmfe")
+
+[node name="sonidoGanaste" type="AudioStreamPlayer2D" parent="." unique_id=857271134]
+process_mode = 3
+stream = ExtResource("5_4gjv1")

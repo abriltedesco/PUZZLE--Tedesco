@@ -71,6 +71,7 @@ func manejarNiebla() -> void:
 					
 			if puedoRomperla and posFrente.distance_to(nodo.global_position) < 10:
 				nodo.queue_free()
+				$sonidoRomper.play()
 				destruir = true
 		
 	if destruir:
@@ -79,6 +80,7 @@ func manejarNiebla() -> void:
 			var niebla = preload("res://escenas/niebla.tscn").instantiate()
 			get_parent().add_child(niebla)
 			niebla.global_position = tile.to_global(tile.map_to_local(celda))
+			$sonidoRomper.play()
 		
 func verificarSalida():
 	var celda_actual = tileSalida.local_to_map(tile.to_local(global_position))
@@ -88,15 +90,20 @@ func verificarSalida():
 		if tile_data.get_custom_data("esSalida") == true && Global.salidaAbierta:
 			ganaste() 
 			
+func cambiarEscena() -> void:
+	var nivelEscena = get_parent().numNivel
+	if nivelEscena >= Global.nivelActual:
+		Global.nivelActual += 1
+		
 func ganaste() -> void:
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	cartel.visible = true
-	var nivelEscena = get_parent().numNivel
-	if nivelEscena >= Global.nivelActual:
-		Global.nivelActual += 1
+	$sonidoGanaste.play()
+	cambiarEscena()
 	get_tree().paused = true
 	await get_tree().create_timer(3.0).timeout
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://escenas/niveles.tscn")
 	
 func perdiste() -> void:
@@ -105,6 +112,7 @@ func perdiste() -> void:
 	set_physics_process(false)
 	cartelGO.visible = true
 	cartelGO2.visible = true
+	$sonidoPerdiste.play()
 	await get_tree().create_timer(3.0).timeout
 	if tree:
 		tree.reload_current_scene()

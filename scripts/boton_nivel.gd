@@ -13,5 +13,7 @@ func _ready() -> void:
 		$Label.visible = false
 		
 func _on_pressed() -> void:
+	$"../sonidoSelect".play()
 	if dirNivel != "":
+		await$"../sonidoSelect".finished
 		get_tree().change_scene_to_file(dirNivel)

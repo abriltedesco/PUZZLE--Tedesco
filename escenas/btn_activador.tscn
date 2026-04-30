@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cg4om4ssa8jni" path="res://assetsPuzzle/botonActivador.png" id="1_bswl3"]
 [ext_resource type="Script" uid="uid://tyxm3og36dvj" path="res://scripts/btn_activador.gd" id="1_u788u"]
+[ext_resource type="AudioStream" uid="uid://da3jv8utmq0r4" path="res://assetsPuzzle/sfx/pop_2.wav" id="3_rxfcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u788u"]
 size = Vector2(16, 16)
@@ -14,3 +15,6 @@ texture = ExtResource("1_bswl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=232227530]
 shape = SubResource("RectangleShape2D_u788u")
+
+[node name="sonidoBoton" type="AudioStreamPlayer2D" parent="." unique_id=1299346353]
+stream = ExtResource("3_rxfcm")

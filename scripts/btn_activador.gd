@@ -5,4 +5,6 @@ func _ready() -> void:
 	
 func _recolectada(cuerpo) -> void:
 	if cuerpo.is_in_group("fantasma"):
+		$sonidoBoton.play()
+		await $sonidoBoton.finished
 		Global.pisarBoton()     

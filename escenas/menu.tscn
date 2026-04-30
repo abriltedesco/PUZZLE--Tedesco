@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://x8aa31rp28qn" path="res://assetsPuzzle/PHANTOM ESCAPE.png" id="2_6cq3m"]
 [ext_resource type="FontFile" uid="uid://dsv01ips38vts" path="res://assetsPuzzle/font/ppal/templarshieldcond.ttf" id="3_56ah5"]
 [ext_resource type="FontFile" uid="uid://bwo6h5r1di7b6" path="res://assetsPuzzle/font/Pixel Digivolve.otf" id="4_xqndx"]
+[ext_resource type="AudioStream" uid="uid://dypimfie047jx" path="res://assetsPuzzle/sfx/select_4.wav" id="5_5t3kx"]
+[ext_resource type="AudioStream" uid="uid://c3t4478h2ugbb" path="res://assetsPuzzle/sfx/pacman/start.wav" id="6_56ah5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56ah5"]
 
@@ -88,6 +90,9 @@ text = " reglas "
 alignment = 2
 icon_alignment = 2
 
+[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="HBoxContainer/btnReglas" unique_id=2130181846]
+stream = ExtResource("5_5t3kx")
+
 [node name="btnJugar" type="Button" parent="HBoxContainer" unique_id=1189574572]
 layout_mode = 2
 theme_override_colors/font_color = Color(1.2048124, 1.2950082, 1.462, 1)
@@ -97,6 +102,9 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_6cq3m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5t3kx")
 text = "  JUGAR  "
+
+[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="HBoxContainer/btnJugar" unique_id=270469069]
+stream = ExtResource("5_5t3kx")
 
 [node name="btnSalir" type="Button" parent="HBoxContainer" unique_id=238266901]
 layout_mode = 2
@@ -109,6 +117,14 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_4gv4q")
 text = "  SALIR   
 "
 
+[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="HBoxContainer/btnSalir" unique_id=1864630921]
+stream = ExtResource("5_5t3kx")
+
+[node name="sonidoStart" type="AudioStreamPlayer2D" parent="." unique_id=1284833419]
+stream = ExtResource("6_56ah5")
+autoplay = true
+
+[connection signal="button_down" from="HBoxContainer/btnReglas" to="." method="_on_btn_reglas_button_down"]
 [connection signal="pressed" from="HBoxContainer/btnReglas" to="." method="_on_btn_reglas_pressed"]
 [connection signal="pressed" from="HBoxContainer/btnJugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="HBoxContainer/btnSalir" to="." method="_on_btn_salir_pressed"]
