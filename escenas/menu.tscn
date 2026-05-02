@@ -2,10 +2,36 @@
 
 [ext_resource type="Script" uid="uid://cmxjepq8dncfl" path="res://scripts/menu.gd" id="1_6cq3m"]
 [ext_resource type="Texture2D" uid="uid://x8aa31rp28qn" path="res://assetsPuzzle/PHANTOM ESCAPE.png" id="2_6cq3m"]
+[ext_resource type="Shader" uid="uid://dahwb3paxhrw2" path="res://shader/menu.gdshader" id="2_xqndx"]
 [ext_resource type="FontFile" uid="uid://dsv01ips38vts" path="res://assetsPuzzle/font/ppal/templarshieldcond.ttf" id="3_56ah5"]
 [ext_resource type="FontFile" uid="uid://bwo6h5r1di7b6" path="res://assetsPuzzle/font/Pixel Digivolve.otf" id="4_xqndx"]
 [ext_resource type="AudioStream" uid="uid://dypimfie047jx" path="res://assetsPuzzle/sfx/select_4.wav" id="5_5t3kx"]
 [ext_resource type="AudioStream" uid="uid://c3t4478h2ugbb" path="res://assetsPuzzle/sfx/pacman/start.wav" id="6_56ah5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xqndx"]
+shader = ExtResource("2_xqndx")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.38
+shader_parameter/scanline_strength = 0.95
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 1.8
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56ah5"]
 
@@ -33,6 +59,86 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6cq3m")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=533063867]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=294280106]
+material = SubResource("ShaderMaterial_xqndx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=619343466]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.25
+offset_top = -124.5
+offset_right = 318.25
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_56ah5")
+theme_override_font_sizes/font_size = 180
+text = "PHANTOM ESCAPE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=357932128]
+layout_direction = 2
+offset_left = 168.5
+offset_top = 384.0
+offset_right = 752.5
+offset_bottom = 426.0
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="btnReglas" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=1543464844]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
+theme_override_colors/font_hover_color = Color(0.32156864, 0.3882353, 0.8509804, 1)
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 1
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_56ah5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6cq3m")
+text = " reglas "
+alignment = 2
+icon_alignment = 2
+
+[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="CanvasLayer/HBoxContainer/btnReglas" unique_id=2130181846]
+stream = ExtResource("5_5t3kx")
+
+[node name="btnJugar" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=1189574572]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.2048124, 1.2950082, 1.462, 1)
+theme_override_colors/font_hover_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cq3m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5t3kx")
+text = "  JUGAR  "
+
+[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="CanvasLayer/HBoxContainer/btnJugar" unique_id=270469069]
+stream = ExtResource("5_5t3kx")
+
+[node name="btnSalir" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=238266901]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
+theme_override_colors/font_hover_color = Color(0.32156864, 0.3882353, 0.8509804, 1)
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xqndx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4gv4q")
+text = "  SALIR   
+"
+
+[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="CanvasLayer/HBoxContainer/btnSalir" unique_id=1864630921]
+stream = ExtResource("5_5t3kx")
+
 [node name="fondo" type="TextureRect" parent="." unique_id=248395951]
 layout_mode = 1
 anchors_preset = 8
@@ -48,83 +154,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_6cq3m")
 
-[node name="Label" type="Label" parent="." unique_id=619343466]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -317.75
-offset_top = -124.5
-offset_right = 317.75
-offset_bottom = 60.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_56ah5")
-theme_override_font_sizes/font_size = 180
-text = "PHANTOM ESCAPE"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=357932128]
-layout_direction = 2
-layout_mode = 0
-offset_left = 168.5
-offset_top = 384.0
-offset_right = 752.5
-offset_bottom = 426.0
-theme_override_constants/separation = 45
-alignment = 1
-
-[node name="btnReglas" type="Button" parent="HBoxContainer" unique_id=1543464844]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
-theme_override_colors/font_hover_color = Color(0.32156864, 0.3882353, 0.8509804, 1)
-theme_override_constants/h_separation = 8
-theme_override_constants/icon_max_width = 1
-theme_override_fonts/font = ExtResource("4_xqndx")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxEmpty_56ah5")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_6cq3m")
-text = " reglas "
-alignment = 2
-icon_alignment = 2
-
-[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="HBoxContainer/btnReglas" unique_id=2130181846]
-stream = ExtResource("5_5t3kx")
-
-[node name="btnJugar" type="Button" parent="HBoxContainer" unique_id=1189574572]
-layout_mode = 2
-theme_override_colors/font_color = Color(1.2048124, 1.2950082, 1.462, 1)
-theme_override_colors/font_hover_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
-theme_override_fonts/font = ExtResource("4_xqndx")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_6cq3m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5t3kx")
-text = "  JUGAR  "
-
-[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="HBoxContainer/btnJugar" unique_id=270469069]
-stream = ExtResource("5_5t3kx")
-
-[node name="btnSalir" type="Button" parent="HBoxContainer" unique_id=238266901]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.15294118, 0.6509804, 0.8784314, 1)
-theme_override_colors/font_hover_color = Color(0.32156864, 0.3882353, 0.8509804, 1)
-theme_override_fonts/font = ExtResource("4_xqndx")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxEmpty_xqndx")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_4gv4q")
-text = "  SALIR   
-"
-
-[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="HBoxContainer/btnSalir" unique_id=1864630921]
-stream = ExtResource("5_5t3kx")
-
 [node name="sonidoStart" type="AudioStreamPlayer2D" parent="." unique_id=1284833419]
 stream = ExtResource("6_56ah5")
 autoplay = true
 
-[connection signal="button_down" from="HBoxContainer/btnReglas" to="." method="_on_btn_reglas_button_down"]
-[connection signal="pressed" from="HBoxContainer/btnReglas" to="." method="_on_btn_reglas_pressed"]
-[connection signal="pressed" from="HBoxContainer/btnJugar" to="." method="_on_btn_jugar_pressed"]
-[connection signal="pressed" from="HBoxContainer/btnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="button_down" from="CanvasLayer/HBoxContainer/btnReglas" to="." method="_on_btn_reglas_button_down"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/btnReglas" to="." method="_on_btn_reglas_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/btnJugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/btnSalir" to="." method="_on_btn_salir_pressed"]

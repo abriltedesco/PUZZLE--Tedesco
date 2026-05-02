@@ -3,9 +3,35 @@
 [ext_resource type="Script" uid="uid://cgsrj5yqgi0di" path="res://scripts/reglas.gd" id="1_16uij"]
 [ext_resource type="FontFile" uid="uid://grbvnibu4wqa" path="res://assetsPuzzle/font/ppal/templarshieldcondsemital.ttf" id="2_16uij"]
 [ext_resource type="Texture2D" uid="uid://mfdrfcv0t07t" path="res://assetsPuzzle/backgroundNiv.png" id="2_htjd0"]
+[ext_resource type="Shader" uid="uid://dahwb3paxhrw2" path="res://shader/menu.gdshader" id="3_28j5x"]
 [ext_resource type="FontFile" uid="uid://bwo6h5r1di7b6" path="res://assetsPuzzle/font/Pixel Digivolve.otf" id="3_htjd0"]
 [ext_resource type="Texture2D" uid="uid://cstafquymuqgl" path="res://assetsPuzzle/0509fe5e4db8180930f4ae4f84adfb98-removebg-preview.png" id="4_28j5x"]
 [ext_resource type="AudioStream" uid="uid://dypimfie047jx" path="res://assetsPuzzle/sfx/select_4.wav" id="6_28j5x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3niam"]
+shader = ExtResource("3_28j5x")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.38
+shader_parameter/scanline_strength = 0.95
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 1.8
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htjd0"]
 
@@ -35,45 +61,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_htjd0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1285825388]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 33.0
-offset_top = -144.0
-offset_right = 562.0
-offset_bottom = 144.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=872746632]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=592547899]
+material = SubResource("ShaderMaterial_3niam")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=203916800]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_16uij")
-theme_override_font_sizes/font_size = 75
-text = "INSTRUCCIONES"
-
-[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1461198586]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_htjd0")
-theme_override_font_sizes/font_size = 22
-text = "- mové al fantasma con las flechas o con las teclas \"wasd\"
-- presioná space para crear o romper niebla frente a vos 
-- es obligatorio recolectar todas las comidas para abrir la salida
-- Si el pacman te toca, se reinicia el nivel."
-autowrap_mode = 3
-
-[node name="fotito1" type="TextureRect" parent="." unique_id=2125374360]
-layout_mode = 0
-offset_left = 598.0
-offset_top = 203.0
-offset_right = 877.0
-offset_bottom = 460.0
-texture = ExtResource("4_28j5x")
-expand_mode = 1
-
-[node name="btnVolver" type="Button" parent="." unique_id=549002136]
-layout_mode = 1
+[node name="btnVolver" type="Button" parent="CanvasLayer" unique_id=549002136]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -93,7 +91,43 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_htjd0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_28j5x")
 text = "VOLVER"
 
-[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="btnVolver" unique_id=1458873834]
+[node name="sonidoSelect" type="AudioStreamPlayer2D" parent="CanvasLayer/btnVolver" unique_id=1458873834]
 stream = ExtResource("6_28j5x")
 
-[connection signal="pressed" from="btnVolver" to="." method="_on_btn_volver_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1285825388]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = -159.0
+offset_right = 562.0
+offset_bottom = 159.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=203916800]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_16uij")
+theme_override_font_sizes/font_size = 75
+text = "INSTRUCCIONES"
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1461198586]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_htjd0")
+theme_override_font_sizes/font_size = 22
+text = "- mové al fantasma con las flechas o con las teclas \"wasd\"
+- presioná space para crear o romper niebla frente a vos 
+- es obligatorio recolectar todas las comidas para abrir la salida
+- Si el pacman te toca, se reinicia el nivel."
+autowrap_mode = 3
+
+[node name="fotito1" type="TextureRect" parent="." unique_id=2125374360]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 203.0
+offset_right = 877.0
+offset_bottom = 460.0
+texture = ExtResource("4_28j5x")
+expand_mode = 1
+
+[connection signal="pressed" from="CanvasLayer/btnVolver" to="." method="_on_btn_volver_pressed"]
