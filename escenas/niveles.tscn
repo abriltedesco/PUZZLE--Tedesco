@@ -66,27 +66,27 @@ stream = ExtResource("4_l655b")
 
 [node name="botonNivel" parent="VBoxContainer/GridContainer" unique_id=1644839395 instance=ExtResource("3_73bos")]
 layout_mode = 2
-dirNivel = "res://escenas/nivel_1.tscn"
+dirNivel = "res://escenas/niveles/nivel_1.tscn"
 
 [node name="botonNivel2" parent="VBoxContainer/GridContainer" unique_id=1796350799 instance=ExtResource("3_73bos")]
 layout_mode = 2
 numNivel = 2
-dirNivel = "res://escenas/nivel_2.tscn"
+dirNivel = "res://escenas/niveles/nivel_2.tscn"
 
 [node name="botonNivel3" parent="VBoxContainer/GridContainer" unique_id=1649295807 instance=ExtResource("3_73bos")]
 layout_mode = 2
 numNivel = 3
-dirNivel = "res://escenas/nivel_3.tscn"
+dirNivel = "res://escenas/niveles/nivel_3.tscn"
 
 [node name="botonNivel4" parent="VBoxContainer/GridContainer" unique_id=738514763 instance=ExtResource("3_73bos")]
 layout_mode = 2
 numNivel = 4
-dirNivel = "res://escenas/nivel_4.tscn"
+dirNivel = "res://escenas/niveles/nivel_4.tscn"
 
 [node name="botonNivel5" parent="VBoxContainer/GridContainer" unique_id=498109122 instance=ExtResource("3_73bos")]
 layout_mode = 2
 numNivel = 5
-dirNivel = "res://escenas/nivel_5.tscn"
+dirNivel = "res://escenas/niveles/nivel_5.tscn"
 
 [node name="btnMenu" type="Button" parent="." unique_id=461879189]
 layout_mode = 0

@@ -769,3 +769,6 @@ vertical_alignment = 1
 
 [node name="reloj" parent="." unique_id=659180923 instance=ExtResource("9_4awoi")]
 tiempoNivel = 25
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=901341684]
+anchor_mode = 0

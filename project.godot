@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 Global="*uid://cj13nfaajxu3w"
+GestorTransicion="*uid://xmifnmewbida"
 
 [display]
 

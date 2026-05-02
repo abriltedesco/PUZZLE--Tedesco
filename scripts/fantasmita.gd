@@ -104,7 +104,7 @@ func ganaste() -> void:
 	get_tree().paused = true
 	await get_tree().create_timer(3.0).timeout
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://escenas/niveles.tscn")
+	GestorTransicion.cambiarEscena("res://escenas/niveles.tscn")
 	
 func perdiste() -> void:
 	var tree = get_tree()
@@ -113,6 +113,17 @@ func perdiste() -> void:
 	cartelGO.visible = true
 	cartelGO2.visible = true
 	$sonidoPerdiste.play()
+		
+	var camara = get_parent().get_node_or_null("Camera2D")
+	if camara != null:
+		var tween = create_tween()
+		for i in range(6):
+			var temblor_x = randf_range(-3.0, 3.0)
+			var temblor_y = randf_range(-3.0, 3.0)
+			tween.tween_property(camara, "offset", Vector2(temblor_x, temblor_y), 0.05)
+			
+		tween.tween_property(camara, "offset", Vector2.ZERO, 0.05)
+		
 	await get_tree().create_timer(3.0).timeout
 	if tree:
 		tree.reload_current_scene()

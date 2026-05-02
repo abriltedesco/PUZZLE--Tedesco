@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bty7jpg3ndsbk" path="res://scripts/comidita.gd" id="1_85yxa"]
 [ext_resource type="Texture2D" uid="uid://pib7voqh3gbh" path="res://assetsPuzzle/comidita.png" id="1_fwjj3"]
-[ext_resource type="AudioStream" uid="uid://o06lc27p3r5x" path="res://assetsPuzzle/Arcade - Pac-Man - Miscellaneous - Sound Effects/eat_dot_1.wav" id="3_ldnjo"]
+[ext_resource type="AudioStream" uid="uid://o06lc27p3r5x" path="res://assetsPuzzle/sfx/pacman/eat_dot_1.wav" id="3_ldnjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85yxa"]
 size = Vector2(16, 16)
