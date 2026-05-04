@@ -641,6 +641,9 @@ texture = ExtResource("1_rcqas")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_64q0a")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8avhw"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.69803923)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4awoi"]
 bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.69803923)
 
@@ -703,6 +706,50 @@ position = Vector2(48, 608)
 
 [node name="pacman" parent="." unique_id=1907907721 groups=["pacman"] instance=ExtResource("6_e34w8")]
 position = Vector2(586, 409)
+
+[node name="avisoCartel" type="CanvasLayer" parent="." unique_id=1089959261]
+
+[node name="Label" type="Label" parent="avisoCartel" unique_id=1504324473]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -172.0
+offset_right = 288.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_cagvo")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_8avhw")
+text = "
+Cuidado! ahora un enemigo
+se hace presente, evita
+tocarlo ayudandote con
+las nieblas."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="avisoCartel" unique_id=902360703]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = 60.0
+offset_right = 281.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3019608, 0.6509804, 1, 1)
+theme_override_fonts/font = ExtResource("8_cagvo")
+theme_override_font_sizes/font_size = 26
+text = "y descubre el mejor camino
+ para salir antes que se acabe 
+el tiempo!"
+horizontal_alignment = 1
 
 [node name="ganasteCartel" type="CanvasLayer" parent="." unique_id=2097813480]
 

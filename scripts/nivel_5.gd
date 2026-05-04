@@ -13,6 +13,10 @@ func _ready() -> void:
 		
 	Global.iniciarComiditas(cantidad, false)
 	
-	$ganasteCartel/Label.visible = false
-	$perdisteCartel/Label.visible = false
-	$perdisteCartel/Label2.visible = false
+	$avisoCartel/Label.visible = true
+	$avisoCartel/Label2.visible = true
+	await get_tree().create_timer(8.0).timeout
+	$avisoCartel/Label.visible = false
+	$avisoCartel/Label2.visible = false
+	get_tree().paused = false
+	$reloj/Timer.start()

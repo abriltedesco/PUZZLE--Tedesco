@@ -13,6 +13,7 @@ var imgUp = preload("res://assetsPuzzle/fantasma/up.png")
 var imgDown = preload("res://assetsPuzzle/fantasma/down.png")
 var imgLeft = preload("res://assetsPuzzle/fantasma/left.png")
 var imgDer  = preload("res://assetsPuzzle/fantasma/fantasma.png")
+var imgDead  = preload("res://assetsPuzzle/fantasma/dead.png")
 
 func _physics_process(_delta: float) -> void:
 	tileSalida.modulate = Color(0.486, 0.486, 0.486, 1.0)
@@ -106,14 +107,7 @@ func ganaste() -> void:
 	get_tree().paused = false
 	GestorTransicion.cambiarEscena("res://escenas/niveles.tscn")
 	
-func perdiste() -> void:
-	var tree = get_tree()
-	velocity = Vector2.ZERO
-	set_physics_process(false)
-	cartelGO.visible = true
-	cartelGO2.visible = true
-	$sonidoPerdiste.play()
-		
+func movimientoCamara() -> void:
 	var camara = get_parent().get_node_or_null("Camera2D")
 	if camara != null:
 		var tween = create_tween()
@@ -123,6 +117,16 @@ func perdiste() -> void:
 			tween.tween_property(camara, "offset", Vector2(temblor_x, temblor_y), 0.05)
 			
 		tween.tween_property(camara, "offset", Vector2.ZERO, 0.05)
+	
+func perdiste() -> void:
+	$Sprite2D.texture = imgDead
+	var tree = get_tree()
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	cartelGO.visible = true
+	cartelGO2.visible = true
+	$sonidoPerdiste.play()
+	movimientoCamara()
 		
 	await get_tree().create_timer(3.0).timeout
 	if tree:
