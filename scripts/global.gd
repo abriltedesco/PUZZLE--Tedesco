@@ -12,6 +12,7 @@ var comiditasPorColor= {}
 var salidaAbierta=false
 var botonPisado= false 
 var necesitaBtn=false
+var esReinicio =false
 var habilitadoParaRomper = {}
 
 func _ready() -> void:
